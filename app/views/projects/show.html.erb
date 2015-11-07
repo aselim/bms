@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Territory:</strong>
+  <%= @project.Territory %>
+</p>
+
+<p>
+  <strong>Podate:</strong>
+  <%= @project.PODate %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @project.Number %>
+</p>
+
+<p>
+  <strong>Customer:</strong>
+  <%= @project.Customer %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @project.Type %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @project.Name %>
+</p>
+
+<p>
+  <strong>Pm:</strong>
+  <%= @project.PM %>
+</p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @project.Owner %>
+</p>
+
+<%= render 'milestones/create4project' %>
+
+<%= form_for([@project, @project.milestones.build]) do |f| %>
+ <p>
+  <%= f.text_field :name %>
+ </p>
+ <p>
+  <%= f.submit %>
+ </p>
+<% end %>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

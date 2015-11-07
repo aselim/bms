@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: 9.99
+  name: MyString
+
+two:
+  code: 9.99
+  name: MyString

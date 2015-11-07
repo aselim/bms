@@ -1,0 +1,33 @@
+<%= form_for(@team) do |f| %>
+  <% if @team.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@team.errors.count, "error") %> prohibited this team from being saved:</h2>
+
+      <ul>
+      <% @team.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :FullName %><br>
+    <%= f.text_field :FullName %>
+  </div>
+  <div class="field">
+    <%= f.label :BDate %><br>
+    <%= f.date_select :BDate %>
+  </div>
+  <div class="field">
+    <%= f.label :Address %><br>
+    <%= f.text_area :Address %>
+  </div>
+  <div class="field">
+    <%= f.label :Telephone %><br>
+    <%= f.text_field :Telephone %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

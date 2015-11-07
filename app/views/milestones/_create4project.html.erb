@@ -1,0 +1,25 @@
+<%= form_for([@project, @project.milestones.build]) do |f| %>
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_area :name %>
+  </div>
+  <div class="field">
+    <%= f.label :exp_date %><br>
+    <%= f.date_select :exp_date %>
+  </div>
+  <div class="field">
+    <%= f.label :act_date %><br>
+    <%= f.date_select :act_date %>
+  </div>
+  <div class="field">
+    <%= f.label :resources %><br>
+    <%= f.text_area :resources %>
+  </div>
+  <div class="field">
+    <%= f.label :project_id %><br>
+    <%= f.text_field :project_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

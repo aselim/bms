@@ -1,0 +1,49 @@
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Territory %><br>
+    <%= f.collection_select(:Territory, Territory.all, :name, :name, include_blank: true  )%>
+  </div>
+  <div class="field">
+    <%= f.label :PODate %><br>
+    <%= f.date_select :PODate %>
+  </div>
+  <div class="field">
+    <%= f.label :Number %><br>
+    <%= f.text_field :Number %>
+  </div>
+  <div class="field">
+    <%= f.label :Customer %><br>
+    <%= f.collection_select(:Customer, Customer.all, :id, :name, include_blank: true  )%>
+  </div>
+  <div class="field">
+    <%= f.label :Type %><br>
+    <%= f.collection_select(:Type,Ptype.all, :name, :name, include_blank: true ) %>
+  </div>
+  <div class="field">
+    <%= f.label :Name %><br>
+    <%= f.text_field :Name %>
+  </div>
+  <div class="field">
+    <%= f.label :PM %><br>
+    <%= f.text_field :PM %>
+  </div>
+  <div class="field">
+    <%= f.label :Owner %><br>
+    <%= f.text_field :Owner %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Ptypes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ptypes.each do |ptype| %>
+      <tr>
+        <td><%= ptype.name %></td>
+        <td><%= link_to 'Show', ptype %></td>
+        <td><%= link_to 'Edit', edit_ptype_path(ptype) %></td>
+        <td><%= link_to 'Destroy', ptype, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ptype', new_ptype_path %>
